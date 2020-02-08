@@ -37,8 +37,8 @@ def writeAgents(agents):
     with open('data/agents.json', 'w') as agentFile:
         agentFile.write('[\n')
     
-    i = 1
     with open('data/agents.json', 'a') as agentFile:
+        i = 1
         for agentx in agents:
             json.dump(agentx.__dict__, agentFile)
             if i < len(agents):
@@ -48,11 +48,11 @@ def writeAgents(agents):
     
     agentFile.write(']')
 
-def createAgents():
+def createAgents(num):
     agents = []
     dict = { "name" : "", "TOKEN" : "", "chatRate" : 5, "disposition" : 0.0, 
             "intensity" : 0.0, "likes" : 0, "dislikes" : 0, "relationships" : {}}
-    for i in range(4):
+    for i in range(num):
         agentx = Agent(dict)
         agents.append(agentx)
         
