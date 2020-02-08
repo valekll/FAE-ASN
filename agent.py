@@ -50,7 +50,8 @@ def writeAgents(agents):
 
 def createAgents():
     agents = []
-    dict = { "name" : "", "TOKEN" : "", "chatRate" : ""}
+    dict = { "name" : "", "TOKEN" : "", "chatRate" : 0.0, "disposition" : 0.0, "intensity" : 0.0, "likes" : 0, "dislikes" : 0,
+    "relationships" : {}}
     for i in range(4):
         agentx = Agent(dict)
         agents.append(agentx)
@@ -60,7 +61,3 @@ def createAgents():
             print(agentx.__dict__)
     print('\n')
     return agents
-    
-#agents = findAgents()
-#agents = createAgents()
-#writeAgents(agents)

@@ -1,6 +1,6 @@
 [
-{"name": "", "TOKEN": "", "chatRate": ""},
-{"name": "", "TOKEN": "", "chatRate": ""},
-{"name": "", "TOKEN": "", "chatRate": ""},
-{"name": "", "TOKEN": "", "chatRate": ""},
+{"name": "Jeremy", "TOKEN": "", "chatRate": 0.0, "disposition": 0.0, "intensity": 0.0, "likes": 2, "dislikes": 5, "relationships": {}},
+{"name": "Thora", "TOKEN": "", "chatRate": 2, "disposition": 0.1, "intensity": 1.0, "likes": 3, "dislikes": 0, "relationships": {}},
+{"name": "Ares", "TOKEN": "", "chatRate": 0.8, "disposition": 0.3, "intensity": 0.5, "likes": 5, "dislikes": 0, "relationships": {}},
+{"name": "Valekson", "TOKEN": "", "chatRate": 0.0, "disposition": 0.0, "intensity": 0.0, "likes": 0, "dislikes": 0, "relationships": {}}
 ]
