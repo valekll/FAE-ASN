@@ -8,7 +8,6 @@ x_da.dropna()
 import random
 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from sklearn.metrics import accuracy_score
 
 vader = SentimentIntensityAnalyzer()
 
