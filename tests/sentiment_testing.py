@@ -2,10 +2,10 @@ import pandas as pd
 import numpy as np
 import nltk
 
-x_da = pd.read_csv("xayah_randomized.csv")
+x_da = pd.read_csv("data/xayah_randomized.csv")
 x_da.dropna()
 
-train = pd.read_csv("labeledTrainData.tsv", header=0, delimiter="\t", quoting=3)
+train = pd.read_csv("data/labeledTrainData.tsv", header=0, delimiter="\t", quoting=3)
 
 import random
 

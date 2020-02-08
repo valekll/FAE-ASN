@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import sys
 
-x_da = pd.read_csv("xayah_randomized.csv")
+x_da = pd.read_csv("data/xayah_randomized.csv")
 x_da.dropna()
 
 # topic modeling
