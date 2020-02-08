@@ -7,6 +7,10 @@ Created on Sat Feb  8 10:55:33 2020
 
 import agent
 import discord
+import time
+import nest_asyncio
+
+nest_asyncio.apply()
 
 def genMessage(oldmsg, agentx):
     return 'test'
@@ -14,21 +18,29 @@ def genMessage(oldmsg, agentx):
 agents = agent.findAgents()
 
 TOKEN = 'XXXXXXXXXX'
-
 for agentx in agents:
-    TOKEN = agentx.TOKEN
+    if agentx.TOKEN == '':
+        agents.remove(agentx)
+        
+agentx = agents[0]
+TOKEN = agents[0].TOKEN
 
-    client = discord.Client()
+client = discord.Client()
 
-    @client.event
-    async def on_ready():
-        print('Logged in as')
-        print(client.user.name)
-        print(client.user.id)
-        print('------')
-        channel = client.get_channel(675698151935442967)
-        newmsg = genMessage(oldmsg, agentx)
-        await channel.send(newmsg)
-        await client.logout()
+@client.event
+async def on_ready():
+    print('Logged in as')
+    print(client.user.name)
+    print(client.user.id)
+    print('------')
 
-    client.run(TOKEN)
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    channel = client.get_channel(675698151935442967)
+    oldmsg = ''
+    newmsg = await genMessage(oldmsg, agentx)
+    await channel.send(newmsg)
+    
+client.run(TOKEN)
