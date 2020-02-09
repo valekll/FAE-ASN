@@ -12,11 +12,11 @@ import argparse
 
 parser = argparse.ArgumentParser(
 	description='Program used to login a single bot and send a message')
-parser.add_argument("--i", default=0, type=int, help="Index of the bot")
-parser.add_argument("--m", default='', type=str, help="Message to be sent by the bot")
+parser.add_argument("integer", metavar='N', default=0, type=int, help="Index of the bot")
+parser.add_argument("string", metavar='S', default='', type=str, help="Message to be sent by the bot")
 args = parser.parse_args()
-index = args.i
-argmsg = args.m
+index = args.integer
+argmsg = args.string
 
 def genMessage(oldmsg, agentx):
     return agentx.name + ' is a nerd'
