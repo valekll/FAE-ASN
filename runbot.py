@@ -19,11 +19,19 @@ args = parser.parse_args()
 index = args.integer
 argmsg = args.string
 """
-def genMessage(oldmsg, agentx):
-    return agentx.name + ' is a nerd'
+def getMessage():
+    msg = ''
+    with open('data/agentmsg', 'r', encoding = 'utf-8') as f:
+        msg = f.read()
+    return msg
+
+def getIndex():
+    index = 0
+    with open('data/agentindex', 'r', encoding = 'utf-8') as f:
+        index = int(f.read())
+    return index
 
 agents = agent.findAgents()
-
 for agentx in agents:
     if agentx.TOKEN == '':
         agents.remove(agentx)
@@ -43,9 +51,8 @@ def runBot(agentx, msg):
         await client.logout()
         
     client.run(TOKEN)
-'''
-agentx = agents[index]
-msg = genMessage('old msg', agentx)
-msg = argmsg
+
+agentx = agents[getIndex()]
+msg = getMessage()
 runBot(agentx, msg)
-'''
+
