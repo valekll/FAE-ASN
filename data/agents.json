@@ -1,6 +1,6 @@
 [
-    {"name": "Jeremy", "TOKEN": "Njc1ODIxMDQ2OTEzNDMzNjI0.Xj8uXQ.6xU5qUa7VO7BMb7XJqigyEX-ggI", "chatRate": 8, "disposition": -0.2, "intensity": 1.0, "mood": 0.0, "fae": {}},
-    {"name": "Thora", "TOKEN": "Njc1NzczNjAwNzk1NDU5NTk3.Xj8BPw.lQHF9gWKY95OQSxAsITbEgOMq3g", "chatRate": 4, "disposition": 0.1, "intensity": 1.0, "mood": 0.0, "fae": {}},
-    {"name": "Ares", "TOKEN": "Njc1ODk0NjIyMTk4ODI1MDIy.Xj9x9w.cqxkLHDjAIyYUUBA_tjr3L0bRIQ", "chatRate": 2, "disposition": 0.25, "intensity": 0.5, "mood": 0.0, "fae": {}},
-    {"name": "Valekson", "TOKEN": "Njc1NzA5NDQ5MDY2OTA1NjAw.Xj7F9w.8XpqF5tG_ghzJa4ZZWTh5y8Dj6o", "chatRate": 6, "disposition": -0.25, "intensity": 1.3, "mood": 0.0, "fae": {}}
+    {"name": "Jeremy!", "TOKEN": "Njc1ODIxMDQ2OTEzNDMzNjI0.Xj8uXQ.6xU5qUa7VO7BMb7XJqigyEX-ggI", "chatRate": 8, "disposition": -0.2, "intensity": 1.0, "mood": 0.0, "fae": [{"name": "Thora", "v": 0}, {"name": "Ares", "v": 0}, {"name": "Valekson", "v": 0}]},
+    {"name": "Thora", "TOKEN": "Njc1NzczNjAwNzk1NDU5NTk3.Xj8BPw.lQHF9gWKY95OQSxAsITbEgOMq3g", "chatRate": 4, "disposition": 0.1, "intensity": 1.0, "mood": 0.0, "fae": [{"name": "Jeremy!", "v": 0}, {"name": "Ares", "v": 0}, {"name": "Valekson", "v": 0}]},
+    {"name": "Ares", "TOKEN": "Njc1ODk0NjIyMTk4ODI1MDIy.Xj9x9w.cqxkLHDjAIyYUUBA_tjr3L0bRIQ", "chatRate": 2, "disposition": 0.25, "intensity": 0.5, "mood": 0.0, "fae": [{"name": "Jeremy!", "v": 0}, {"name": "Thora", "v": 0}, {"name": "Valekson", "v": 0}]},
+    {"name": "Valekson", "TOKEN": "Njc1NzA5NDQ5MDY2OTA1NjAw.Xj7F9w.8XpqF5tG_ghzJa4ZZWTh5y8Dj6o", "chatRate": 6, "disposition": -0.25, "intensity": 1.3, "mood": 0.0, "fae": [{"name": "Jeremy!", "v": 0}, {"name": "Thora", "v": 0}, {"name": "Ares", "v": 0}]}
 ]
