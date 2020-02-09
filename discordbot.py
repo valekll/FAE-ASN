@@ -10,7 +10,7 @@ import discord
 import time
 
 def genMessage(oldmsg, agentx):
-    return 'reed is a nerd'
+    return agentx.name + ' is a nerd'
 
 agents = agent.findAgents()
 
@@ -19,7 +19,7 @@ for agentx in agents:
     if agentx.TOKEN == '':
         agents.remove(agentx)
         
-def runBot(agentx):    
+def runBot(agentx, msg):    
     TOKEN = agentx.TOKEN
     client = discord.Client()
     
@@ -30,20 +30,11 @@ def runBot(agentx):
         print(client.user.id)
         print('------')
         channel = client.get_channel(675698151935442967)
-        await channel.send('I am here.')
-
+        await channel.send(msg)     
+        await client.logout()
         
-    @client.event
-    async def on_message(message):
-        if message.author == client.user:
-            return
-        channel = client.get_channel(675698151935442967)
-        if channel == message.channel:
-            oldmsg = ''
-            newmsg = genMessage(oldmsg, agentx)
-            await channel.send(newmsg)
-        
-            
     client.run(TOKEN)
 
-runBot(agents[0])
+agentx = agents[0]
+msg = genMessage('old msg', agentx)
+runBot(agentx, msg)
