@@ -8,18 +8,26 @@ Created on Sat Feb  8 10:55:33 2020
 import agent
 import discord
 import time
+import argparse
+
+parser = argparse.ArgumentParser(
+	description='Program used to login a single bot and send a message')
+parser.add_argument("--i", default=0, type=int, help="Index of the bot")
+parser.add_argument("--m", default='', type=str, help="Message to be sent by the bot")
+args = parser.parse_args()
+index = args.i
+argmsg = args.m
 
 def genMessage(oldmsg, agentx):
-    return 'reed is a nerd'
+    return agentx.name + ' is a nerd'
 
 agents = agent.findAgents()
 
-TOKEN = 'XXXXXXXXXX'
 for agentx in agents:
     if agentx.TOKEN == '':
         agents.remove(agentx)
         
-def runBot(agentx):    
+def runBot(agentx, msg):    
     TOKEN = agentx.TOKEN
     client = discord.Client()
     
@@ -30,20 +38,12 @@ def runBot(agentx):
         print(client.user.id)
         print('------')
         channel = client.get_channel(675698151935442967)
-        await channel.send('I am here.')
-
+        await channel.send(msg)     
+        await client.logout()
         
-    @client.event
-    async def on_message(message):
-        if message.author == client.user:
-            return
-        channel = client.get_channel(675698151935442967)
-        if channel == message.channel:
-            oldmsg = ''
-            newmsg = genMessage(oldmsg, agentx)
-            await channel.send(newmsg)
-        
-            
     client.run(TOKEN)
 
-runBot(agents[0])
+agentx = agents[index]
+msg = genMessage('old msg', agentx)
+msg = argmsg
+runBot(agentx, msg)
