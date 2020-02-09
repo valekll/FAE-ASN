@@ -14,7 +14,12 @@ import os
 
 def adjustRMS(agentx, rms, lastbot):
     rms = rms + agentx.disposition + agentx.mood
-    rms = rms + (.5 * agentx.fae.lastbot)
+    faev = 0
+    for bot in agentx.fae:
+        if bot.name == lastbot.name:
+            faev = bot.v 
+            break   
+    rms = rms + (.5 * faev)
     rms = rms * agentx.intensity
     rms = rms / 4
     return rms
@@ -62,11 +67,11 @@ for agentx in agents:
         agents.remove(agentx)
 
 i = 0
-lastBot = agents[0]
+lastbot = agents[0]
 while(True):
     agentx = agents[i]
-    if talk(agentx) and lastBot != agentx:
-        cycle(i, agentx, lastBot)
+    if talk(agentx) and lastbot != agentx:
+        cycle(i, agentx, lastbot)
         lastBot = agentx
     i = i + 1
     if i == len(agents):
