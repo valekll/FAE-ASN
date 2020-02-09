@@ -51,7 +51,7 @@ def writeAgents(agents):
 def createAgents(num):
     agents = []
     dict = { "name" : "", "TOKEN" : "", "chatRate" : 5, "disposition" : 0.0, 
-            "intensity" : 0.0, "likes" : 0, "dislikes" : 0, "relationships" : {}}
+            "intensity" : 0.0, "mood": 0.0, "relationships" : {}}
     for i in range(num):
         agentx = Agent(dict)
         agents.append(agentx)
@@ -61,3 +61,12 @@ def createAgents(num):
             print(agentx.__dict__)
     print('\n')
     return agents
+
+def resetFAE(agents):
+    return
+
+agents = findAgents()
+print('\n')
+for agentx in agents:
+    print(agentx.__dict__)
+    print('\n')
