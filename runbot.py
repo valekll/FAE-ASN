@@ -48,7 +48,6 @@ def runBot(agentx, msg):
         print('------')
         channel = client.get_channel(675698151935442967)
         await channel.send(msg)     
-        time.sleep(5)
         lastmsg = channel.last_message.content
         lastauthor = channel.last_message.author.name
         with open('data/lastmsg', 'w', encoding = 'utf-8') as f:

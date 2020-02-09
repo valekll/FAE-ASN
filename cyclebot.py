@@ -34,6 +34,10 @@ def cycle(i, agentx):
     author = ''
     with open('data/lastauthor', 'r', encoding = 'utf-8') as f:
         author = f.read()
+    print(author)
+
+    msg = '"' + msg + '"'
+    print(msg)
         
     #evaluate msg for rms
     rms = evaluation.evaluate_string(msg)
