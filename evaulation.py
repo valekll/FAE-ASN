@@ -1,6 +1,13 @@
 from openai.src.generatemessage import generate_dialogue
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
+
+def evaulate_string(message):
+    vader = SentimentIntensityAnalyzer()
+    results = [vader.polarity_scores(message)]
+    return results
+
+    
 #Purpose of the function is to generate and evaluate the possible response options given a message
 def evaluate_dialogue(message):
     
