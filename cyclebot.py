@@ -16,11 +16,11 @@ for agentx in agents:
     if agentx.TOKEN == '':
         agents.remove(agentx)
 
-i = len(agents)
+i = 0
 while(True):
 	agentx = agents[i]
 	msg = "test message"
-	runBot(agentx,msg)
-	i = i-1
-	if(i==-1):
-		i = len(agents)
+	runbot.runBot(agentx,msg)
+	i = i + 1
+	if(i==len(agents)):
+		i = 0
