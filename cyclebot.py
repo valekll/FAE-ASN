@@ -48,6 +48,9 @@ def cycle(i, agentx):
     #then we adjust agent, but we'll get to that.
     #then we generate and decide from dialogue options
     reply = evaluation.decide_dialogue(arms, evaluation.evaluate_dialogue(msg))
+    reply = reply.strip()
+    if(reply[:-1] == ','):
+        reply = reply[:-1]
 
     #post message to discord
     print(i)

@@ -19,10 +19,10 @@ from openai.src.utils import *
 def generate_dialogue(
     model_name='124M',
     seed=None,
-    nsamples=15,
+    nsamples=10,
     batch_size=1,
     length=60,
-    temperature=.9,
+    temperature=.94,
     top_k=20,
     top_p=1,
     models_dir='openai\models',
