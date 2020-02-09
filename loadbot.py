@@ -12,9 +12,9 @@ import argparse
 
 parser = argparse.ArgumentParser(
 	description='Program used to login a single bot')
-parser.add_argument("--i", default=0, type=int, help="Index of the bot")
+parser.add_argument("integer", metavar='N', default=0, type=int, help="Index of the bot")
 args = parser.parse_args()
-argent = args.i
+argent = args.integer
 
 def genMessage(oldmsg, agentx):
     return 'reed is a nerd'
