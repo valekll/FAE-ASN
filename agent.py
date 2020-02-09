@@ -63,6 +63,8 @@ def createAgents(num):
     return agents
 
 def resetFAE(agents):
+    for agentx in agents:
+        break
     return
 
 agents = findAgents()
@@ -70,3 +72,6 @@ print('\n')
 for agentx in agents:
     print(agentx.__dict__)
     print('\n')
+    for fae in agentx.fae:
+        print(fae['name'])
+    print('\n\n')
