@@ -15,10 +15,12 @@ import os
 def adjustRMS(agentx, rms, lastbot):
     rms = rms + agentx.disposition + agentx.mood
     faev = 0
+    '''
     for bot in agentx.fae:
         if bot.name == lastbot.name:
             faev = bot.v 
             break   
+    '''
     rms = rms + (.5 * faev)
     rms = rms * agentx.intensity
     rms = rms / 4
