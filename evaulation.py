@@ -19,8 +19,17 @@ def evaluate_dialogue(message):
         possible_messages.update({dialogue_options[index] : i['compound']}) 
         index = index + 1
     sorted_messages = sorted(possible_messages.items(), key=lambda x: x[1])
-    print(sorted_messages)
     return sorted_messages
+
+def decide_dialogue(target_score, messages):
+    closest_match_message = ""
+    closest_match_score =  10 #junk value, doesn't matter at all
+    for message, message_score in messages:
+        score_difference = abs(target_score - message_score)
+        if(score_difference < closest_match_score):
+            closest_match_score = score_difference
+            closest_match_message = message
+    return closest_match_message
 
 
 #running this file by itself will generate a sample of the evaulation message dictionary 
@@ -28,4 +37,6 @@ def evaluate_dialogue(message):
 #IMPORTANT: Please escape your double quotes! Otherwise the OpenAI will generate passages that are narrated
 #rather than conversational.
 if __name__ == '__main__':
-    evaluate_dialogue('"Hey how was your day?"')
+    messages = evaluate_dialogue('"Hey how was your day?"')
+    print(messages)
+    print(decide_dialogue(.2, messages))
