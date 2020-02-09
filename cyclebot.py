@@ -13,7 +13,7 @@ from random import randint
 import os
 
 def adjustRMS(agentx, rms, lastbot):
-    rms = rms + agentx.disposition + agentc.mood
+    rms = rms + agentx.disposition + agentx.mood
     rms = rms + (.5 * agentx.fae.lastbot)
     rms = rms * agentx.intensity
     rms = rms / 4
@@ -66,7 +66,7 @@ lastBot = agents[0]
 while(True):
     agentx = agents[i]
     if talk(agentx) and lastBot != agentx:
-        cycle(i, agentx, lastbot)
+        cycle(i, agentx, lastBot)
         lastBot = agentx
     i = i + 1
     if i == len(agents):
