@@ -15,12 +15,12 @@ import os
 def adjustRMS(agentx, rms, lastbot):
     rms = rms + agentx.disposition + agentx.mood
     faev = 0
-    '''
+    
     for bot in agentx.fae:
-        if bot.name == lastbot.name:
-            faev = bot.v 
+        if bot['name'] == lastbot.name:
+            faev = bot['v'] 
             break   
-    '''
+    
     rms = rms + (.5 * faev)
     rms = rms * agentx.intensity
     rms = rms / 4
@@ -38,7 +38,7 @@ def cycle(i, agentx, lastbot):
 
     #then we adjust agent, but we'll get to that.
     #then we generate and decide from dialogue options
-    reply = evaluation.decide_dialogue(arms, evaluate_dialogue(msg))
+    reply = evaluation.decide_dialogue(arms, evaluation.evaluate_dialogue(msg))
 
     #post message to discord
     print(i)
