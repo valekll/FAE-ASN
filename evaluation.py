@@ -4,8 +4,8 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 def evaluate_string(message):
     vader = SentimentIntensityAnalyzer()
-    results = [vader.polarity_scores(message)]
-    return results
+    results = vader.polarity_scores(message)
+    return results['compound']
 
     
 #Purpose of the function is to generate and evaluate the possible response options given a message
@@ -44,6 +44,7 @@ def decide_dialogue(target_score, messages):
 #IMPORTANT: Please escape your double quotes! Otherwise the OpenAI will generate passages that are narrated
 #rather than conversational.
 if __name__ == '__main__':
-    messages = evaluate_dialogue('"Hey how was your day?"')
-    print(messages)
-    print(decide_dialogue(.2, messages))
+    #messages = evaluate_dialogue('"Hey how was your day?"')
+    #print(messages)
+    print(evaluate_string("fuck you"))
+    #print(decide_dialogue(.2, messages))
